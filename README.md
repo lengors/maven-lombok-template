@@ -1,11 +1,11 @@
-# Welcome to Maven Java Template &middot; [![GitHub license](https://img.shields.io/github/license/lengors/maven-java-template?color=blue)](https://github.com/facebook/react/blob/main/LICENSE) [![javadoc](https://javadoc.io/badge2/io.github.lengors/maven-java-template/javadoc.svg?color=red)](https://javadoc.io/doc/io.github.lengors/maven-java-template) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lengors_maven-java-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lengors_maven-java-template)
+# Welcome to Maven Lombok Template &middot; [![GitHub license](https://img.shields.io/github/license/lengors/maven-lombok-template?color=blue)](https://github.com/facebook/react/blob/main/LICENSE) [![javadoc](https://javadoc.io/badge2/io.github.lengors/maven-lombok-template/javadoc.svg?color=red)](https://javadoc.io/doc/io.github.lengors/maven-lombok-template) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lengors_maven-lombok-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lengors_maven-lombok-template)
 
-Welcome to **maven-java-template**, a flexible starting point for creating Maven-based Java projects. This template is designed to streamline the setup process for new Java projects, incorporating essential plugins and dependencies to get you up and running quickly.
+Welcome to **maven-lombok-template**, a flexible starting point for creating Maven-based Java projects that require the usage of Lombok. This template is designed to streamline the setup process for new Java projects, incorporating essential plugins and dependencies to get you up and running quickly.
 
 ## Features
 
-- **Dependencies**: Preconfigured with Checker Framework, Mockito, and JUnit.
-- **Plugins**: Includes Checkstyle, Source, Javadoc, GPG, Central Publishing, JaCoCo, Checker Framework, Jar, and Assembly.
+- **Dependencies**: Preconfigured with Lombok, Checker Framework, Mockito, and JUnit.
+- **Plugins**: Includes Lombok, Checkstyle, Source, Javadoc, GPG, Central Publishing, JaCoCo, Checker Framework, Jar, and Assembly.
 - **Branching Strategy**: Four branches (`main`, `beta`, `alpha`, and `dev`) to manage different stages of development and release.
 - **CI/CD Pipelines**: Automated checks for code style, build, testing, static code analysis, and publishing to Maven Central.
 
@@ -14,8 +14,8 @@ Welcome to **maven-java-template**, a flexible starting point for creating Maven
 #### Clone the repository
 
 ```bash
-git clone https://github.com/lengors/maven-java-template.git
-cd maven-java-template
+git clone https://github.com/lengors/maven-lombok-template.git
+cd maven-lombok-template
 ```
 
 #### Build the project
@@ -45,9 +45,9 @@ This template is designed to be as customizable as you need. You can modify depe
 
 ## Documentation and Resources
 
-For detailed guides and additional information, please refer to our [GitHub Wiki](https://github.com/lengors/maven-java-template/wiki).
+For detailed guides and additional information, please refer to our [GitHub Wiki](https://github.com/lengors/maven-lombok-template/wiki).
 
-If you wish to check the detailed API documentation, visit the [Javadoc](https://javadoc.io/doc/io.github.lengors/maven-java-template) page.
+If you wish to check the detailed API documentation, visit the [Javadoc](https://javadoc.io/doc/io.github.lengors/maven-lombok-template) page.
 
 ## Contributing
 
