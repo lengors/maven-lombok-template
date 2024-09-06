@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.lengors</groupId>
-  <artifactId>maven-java-template</artifactId>
-  <version>1.0.0</version>
-  <name>maven-java-template</name>
-  <url>https://github.com/lengors/maven-java-template</url>
-  <description>Template repository for maven projects written in java.</description>
+  <artifactId>maven-lombok-template</artifactId>
+  <version>0.0.0-local.0</version>
+  <name>maven-lombok-template</name>
+  <url>https://github.com/lengors/maven-lombok-template</url>
+  <description>Template repository for maven projects written in java and that require the usage of lombok.</description>
 
   <developers>
     <developer>
@@ -20,7 +20,7 @@
   </developers>
 
   <scm>
-    <url>https://github.com/lengors/maven-java-template</url>
+    <url>https://github.com/lengors/maven-lombok-template</url>
   </scm>
 
   <licenses>
