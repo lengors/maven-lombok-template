@@ -60,6 +60,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
@@ -238,6 +244,12 @@
               <fork>true</fork> <!-- Must fork or else JVM arguments are ignored. -->
               <annotationProcessorPaths>
                 <path>
+                  <groupId>org.projectlombok</groupId>
+                  <artifactId>lombok</artifactId>
+                  <version>${maven.lombok.version}</version>
+                </path>
+
+                <path>
                   <groupId>org.checkerframework</groupId>
                   <artifactId>checker</artifactId>
                   <version>${maven.checkerframework.version}</version>
@@ -247,6 +259,11 @@
                 <!-- Add all the checkers you want to enable here -->
                 <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.resourceleak.ResourceLeakChecker</annotationProcessor>
+
+                <!-- Needs to come after checkerframework processors, while its path needs to come
+                before-->
+                <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+                <annotationProcessor>lombok.launch.AnnotationProcessorHider$ClaimingProcessor</annotationProcessor>
               </annotationProcessors>
               <compilerArgs>
                 <arg>-Xmaxerrs</arg>

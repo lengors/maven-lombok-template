@@ -35,6 +35,7 @@
     <maven.checkerframework.version>3.46.0</maven.checkerframework.version>
     <maven.mockito.version>5.12.0</maven.mockito.version>
     <maven.flatten.version>1.6.0</maven.flatten.version>
+    <maven.lombok.version>1.18.34</maven.lombok.version>
     <maven.junit.version>5.10.3</maven.junit.version>
     <maven.jar.version>3.4.2</maven.jar.version>
 
@@ -58,6 +59,12 @@
         <groupId>org.checkerframework</groupId>
         <artifactId>checker-qual</artifactId>
         <version>${maven.checkerframework.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${maven.lombok.version}</version>
       </dependency>
 
       <dependency>

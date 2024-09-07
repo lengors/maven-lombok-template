@@ -19,6 +19,7 @@
     <checkstyle.skip>true</checkstyle.skip>
 
     <!-- Dependency and plugins versions -->
+    <maven.delombok.version>1.18.20.0</maven.delombok.version>
     <maven.javadoc.version>3.8.0</maven.javadoc.version>
 
     <!-- Helpers -->
@@ -29,6 +30,12 @@
     <dependency>
       <groupId>org.checkerframework</groupId>
       <artifactId>checker-qual</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -49,10 +56,47 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>${project.core.directory}/src/main/java</sourceDirectory>
-    <testSourceDirectory>${project.core.directory}/src/test/java</testSourceDirectory>
+    <sourceDirectory>${project.build.directory}/generated-sources/delombok</sourceDirectory>
+    <testSourceDirectory>${project.build.directory}/generated-test-sources/delombok</testSourceDirectory>
 
     <plugins>
+      <plugin>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok-maven-plugin</artifactId>
+        <version>${maven.delombok.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${maven.lombok.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>delombok</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>delombok</goal>
+            </goals>
+            <configuration>
+              <addOutputDirectory>false</addOutputDirectory>
+              <sourceDirectory>${project.core.directory}/src/main/java</sourceDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>test-delombok</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>testDelombok</goal>
+            </goals>
+            <configuration>
+              <addOutputDirectory>false</addOutputDirectory>
+              <sourceDirectory>${project.core.directory}/src/test/java</sourceDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>

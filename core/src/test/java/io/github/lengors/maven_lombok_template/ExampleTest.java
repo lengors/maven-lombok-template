@@ -1,4 +1,4 @@
-package io.github.lengors.maven_java_template;
+package io.github.lengors.maven_lombok_template;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,30 +9,30 @@ import org.junit.platform.commons.util.ReflectionUtils;
  *
  * @author lengors
  */
-public class ExampleTest {
+class ExampleTest {
   /**
-   * Exampel test for {@link Example#Example()}.
+   * Example test for {@link Example#Example()}.
    */
   @Test
-  public void shouldThrowUnsupportedOperationExceptionWhenInstantiateExample() {
+  void shouldThrowUnsupportedOperationExceptionWhenInstantiateExample() {
     Assertions.assertThrows(UnsupportedOperationException.class, () -> {
       ReflectionUtils.newInstance(Example.class);
     });
   }
 
   /**
-   * Exampel test for {@link Example#example()}.
+   * Example test for {@link Example#example()}.
    */
   @Test
-  public void shouldGetHelloWorldFromExampleFunction() {
+  void shouldGetHelloWorldFromExampleFunction() {
     Assertions.assertEquals("Hello, World!", Example.example());
   }
 
   /**
-   * Exampel test for {@link Example#main(String[])}.
+   * Example test for {@link Example#main(String[])}.
    */
   @Test
-  public void shouldExecuteMainFunctionWithoutErrors() {
+  void shouldExecuteMainFunctionWithoutErrors() {
     Example.main(new String[] {});
   }
 }
