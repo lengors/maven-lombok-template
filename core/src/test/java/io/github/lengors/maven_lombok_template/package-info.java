@@ -3,4 +3,4 @@
  *
  * @author lengors
  */
-package io.github.lengors.maven_java_template;
+package io.github.lengors.maven_lombok_template;
