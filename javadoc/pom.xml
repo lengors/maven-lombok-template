@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.github.lengors</groupId>
+    <artifactId>maven-lombok-template-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <groupId>io.github.lengors</groupId>
+  <artifactId>maven-lombok-template-javadoc</artifactId>
+  <version>${revision}</version>
+
+  <properties>
+    <!-- Configure maven plugins -->
+    <maven.test.skip>true</maven.test.skip>
+    <checkstyle.skip>true</checkstyle.skip>
+
+    <!-- Dependency and plugins versions -->
+    <maven.javadoc.version>3.8.0</maven.javadoc.version>
+
+    <!-- Helpers -->
+    <project.core.directory>${project.basedir}/../core</project.core.directory>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.checkerframework</groupId>
+      <artifactId>checker-qual</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>${project.core.directory}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.core.directory}/src/test/java</testSourceDirectory>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven.jar.version}</version>
+        <executions>
+          <execution>
+            <id>default-jar</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven.javadoc.version}</version>
+        <configuration>
+          <detectLinks>true</detectLinks>
+          <dependencyLinks>
+            <dependencyLink>
+              <groupId>org.checkerframework</groupId>
+              <artifactId>checker-qual</artifactId>
+              <url>https://checkerframework.org/api</url>
+            </dependencyLink>
+          </dependencyLinks>
+          <doctitle>maven-lombok-template ${project.version} API</doctitle>
+          <windowtitle>maven-lombok-template ${project.version} API</windowtitle>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <finalName>maven-lombok-template-${revision}</finalName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
